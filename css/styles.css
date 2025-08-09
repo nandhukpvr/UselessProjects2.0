@@ -1,60 +1,86 @@
-body {
+/* Import the Poppins font (from your original HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Trebuchet MS', sans-serif; /* Use a modern font */
-  background-color: #f0f2f5; /* Lighter, modern background */
+  font-family: 'Poppins', sans-serif; /* Use the imported font */
   margin: 0;
-  padding: 20px 10px; /* Add horizontal padding for smaller screens */
-  color: #333;
+  margin-bottom: 0;
+  padding: 5px 5px;
+  color: #ffffff; /* Change text color to white for contrast */
+
+  /* --- Space Background Theme --- */
+  background-image: url('https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/background.jpg?raw=true');
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Fix the background during scroll */
+  min-height: 100vh;
 }
-canvas {
-  width: 90%; /* Make the canvas responsive */
-  max-width: 600px; /* Limit the max size on large screens */
-  height: auto; /* Maintain aspect ratio */
-  border: none; /* Remove the border for a cleaner look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #fff; /* White canvas background */
-}
-#score {
-  font-size: 2rem; /* Use a relative unit for font size */
-  font-weight: bold;
-  margin: 5px 0;
-  color: #555;
-}
+
 #instructions {
   text-align: center;
   max-width: 600px;
   margin: 5px;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 16px; /* Increased border-radius for a softer look */
+
+  /* --- Glassmorphism Effect --- */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* The frosted glass blur effect! */
+  -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+
+canvas {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px; /* Match the instruction panel */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Add a shadow to lift it */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* The p5.js background() function will draw over this, so we only need the border/shadow */
+}
+
+#score {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0px 0 5px 0;
+  color: #f0f0f0; /* Slightly off-white */
+  /* Add a subtle shadow to make text pop */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  /* --- Glassmorphism Effect for Button --- */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.25); /* Light up on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   #instructions, canvas {
     width: 95%;
   }
-}
-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 8px; /* Slightly more rounded */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
-}
-button:hover {
-  background-color: #45a049;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-  transform: translateY(-2px); /* Lift the button on hover */
 }
