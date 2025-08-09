@@ -1,34 +1,59 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif; /* Use a modern font */
+  background-color: #f0f2f5; /* Lighter, modern background */
+  margin: 0;
+  padding: 20px 10px; /* Add horizontal padding for smaller screens */
+  color: #333;
+}
+canvas {
+  width: 90%; /* Make the canvas responsive */
+  max-width: 600px; /* Limit the max size on large screens */
+  height: auto; /* Maintain aspect ratio */
+  border: none; /* Remove the border for a cleaner look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White canvas background */
+}
+#score {
+  font-size: 2rem; /* Use a relative unit for font size */
+  font-weight: bold;
+  margin: 5px 0;
+  color: #555;
+}
+#instructions {
+  text-align: center;
+  max-width: 600px;
+  margin: 5px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  #instructions, canvas {
+    width: 95%;
   }
-  canvas {
-    border: 2px solid #333;
-    background-color: #757272;
-  }
-  #score {
-    font-size: 24px;
-    margin: 10px 0;
-  }
-  #instructions {
-    text-align: center;
-    max-width: 600px;
-    margin: 10px;
-  }
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  button:hover {
-    background-color: #45a049;
-  }
+}
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Slightly more rounded */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+button:hover {
+  background-color: #45a049;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+  transform: translateY(-2px); /* Lift the button on hover */
+}

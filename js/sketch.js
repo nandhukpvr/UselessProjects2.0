@@ -5,6 +5,13 @@ let canvas;
 let perfectCircleX;
 let perfectCircleY;
 let perfectCircleRadius;
+let funnyTexts = [
+  "Not even close! 😂",
+  "Told you it was impossible for you. 😉",
+  "Maybe try a square next time? 😜",
+  "Your circle looks a bit... sleepy. 😴",
+  "Did a cat walk across your mousepad? 🐾"
+];
 
 function setup() {
   canvas = createCanvas(600, 400);
@@ -16,6 +23,12 @@ function setup() {
   perfectCircleX = width / 2;
   perfectCircleY = height / 2;
   perfectCircleRadius = 250;
+}
+
+function displayRandomText() {
+  let randomIndex = floor(random(funnyTexts.length));
+  let text = funnyTexts[randomIndex];
+  select('#feedback').html(text);
 }
 
 function draw() {
@@ -83,6 +96,7 @@ function mouseReleased() {
     isDrawing = false;
     if (points.length > 20) { // Minimum points for a valid shape
       calculateScore();
+      displayRandomText();
     } else {
       select('#score').html('Score: 0 (Draw a larger shape!)');
     }
@@ -203,6 +217,7 @@ function clearCanvas() {
   score = 0;
   select('#score').html('Score: 0');
   points = [];
+  select('#feedback').html('');
 }
 
 window.onload = function() {
