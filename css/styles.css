@@ -1,8 +1,9 @@
 body {
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Roboto', sans-serif; /* Use a modern font */
+  font-family: 'Trebuchet MS', sans-serif; /* Use a modern font */
   background-color: #f0f2f5; /* Lighter, modern background */
   margin: 0;
   padding: 20px 10px; /* Add horizontal padding for smaller screens */

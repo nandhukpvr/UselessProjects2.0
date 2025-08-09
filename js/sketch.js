@@ -14,15 +14,23 @@ let funnyTexts = [
 ];
 
 function setup() {
-  canvas = createCanvas(600, 400);
+  // Use a responsive canvas size.
+  // The min() function ensures it doesn't get too wide on large screens.
+  let canvasWidth = min(windowWidth * 0.9, 600);
+  let canvasHeight = min(windowHeight * 0.6, 400);
+
+  canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent('canvas-container');
-  background(150);
+  background(255); // Consistent white background
+
   if (typeof p5 === 'undefined') {
     console.error('p5.js not loaded. Check CDN or script inclusion.');
   }
+
+  // Set the properties for the perfect circle based on the new, dynamic canvas size
   perfectCircleX = width / 2;
   perfectCircleY = height / 2;
-  perfectCircleRadius = 250;
+  perfectCircleRadius = min(width, height) * 0.8;
 }
 
 function displayRandomText() {
@@ -37,13 +45,7 @@ function draw() {
   fill(0, 0, 255, 50); // Semi-transparent blue fill
   ellipse(perfectCircleX, perfectCircleY, perfectCircleRadius, perfectCircleRadius);
 
-  // Draw the semi-transparent perfect circle preview if not drawing
-  if (!isDrawing) {
-
-  }
-
-  // This part of the code is the new drawing logic
-  // It ensures the entire drawn path is visible at all times
+  // This part of the code is the drawing logic
   if (isDrawing) {
     let x = mouseX;
     let y = mouseY;
@@ -84,10 +86,12 @@ function draw() {
 }
 
 function mousePressed() {
+  // Ensure touch events on mobile devices work correctly
   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
     isDrawing = true;
     points = [];
     select('#score').html('Score: 0'); // Reset score display on new draw
+    select('#feedback').html(''); // Clear the funny text when a new drawing starts
   }
 }
 
@@ -99,13 +103,13 @@ function mouseReleased() {
       displayRandomText();
     } else {
       select('#score').html('Score: 0 (Draw a larger shape!)');
+      select('#feedback').html('');
     }
   }
 }
 
 function calculateScore() {
   // Use a least-squares fit to find the best-fit circle.
-  // This is more reliable than a simple centroid calculation.
   let sumX = 0, sumY = 0, sumX2 = 0, sumY2 = 0, sumXY = 0, sumX3 = 0, sumY3 = 0, sumXy2 = 0, sumYx2 = 0;
   let N = points.length;
 
@@ -129,11 +133,9 @@ function calculateScore() {
   let D = 0.5 * (N * sumX3 - sumX * sumX2 + N * sumXy2 - sumX * sumY2);
   let E = 0.5 * (N * sumY3 - sumY * sumY2 + N * sumYx2 - sumY * sumX2);
 
-  // Calculate the center coordinates
   let centerX, centerY;
   let denominator = A * C - B * B;
   if (Math.abs(denominator) < 1e-6) {
-    // Avoid division by zero for a near-linear set of points
     centerX = sumX / N;
     centerY = sumY / N;
   } else {
@@ -141,7 +143,6 @@ function calculateScore() {
     centerY = (A * E - B * D) / denominator;
   }
 
-  // Calculate the average radius and deviation from this ideal center
   let totalRadius = 0;
   for (let p of points) {
     totalRadius += dist(p.x, p.y, centerX, centerY);
@@ -155,48 +156,38 @@ function calculateScore() {
   let avgDeviation = totalDeviation / N;
 
   // --- Scoring Logic ---
+  let score = 100 - avgDeviation * 4;
 
-  // Base score is 100 minus the deviation
-  let score = 100 - avgDeviation * 4; // Multiplier of 4 for increased sensitivity
-
-  // PENALTY 1: Shape is not a closed loop
-  // Measure distance from the first point to the last point.
   let startPoint = points[0];
   let endPoint = points[points.length - 1];
   let closureDistance = dist(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
 
-  // Penalty is a percentage of the total circumference
   let circumference = 2 * PI * avgRadius;
   if (circumference > 0) {
     let closurePenalty = (closureDistance / circumference) * 100;
-    score -= closurePenalty * 0.5; // Apply a moderate penalty
+    score -= closurePenalty * 0.5;
   }
 
-  // PENALTY 2: Drawn path is too short or too long
   let pathLength = 0;
   for (let i = 1; i < points.length; i++) {
     pathLength += dist(points[i - 1].x, points[i - 1].y, points[i].x, points[i].y);
   }
 
-  let perfectPathLength = 2 * PI * avgRadius; // The ideal path length
+  let perfectPathLength = 2 * PI * avgRadius;
   let lengthDeviation = Math.abs(pathLength - perfectPathLength);
 
   if (perfectPathLength > 0) {
     let lengthPenalty = (lengthDeviation / perfectPathLength) * 100;
-    score -= lengthPenalty * 0.1; // Apply a smaller penalty
+    score -= lengthPenalty * 0.1;
   }
 
-  // Clamp the score to be between -100 and 100
   score = constrain(score, -100, 100);
   score = Math.floor(score);
 
-  // Debug logging
   console.log(`Avg Deviation: ${avgDeviation.toFixed(2)}, Closure Distance: ${closureDistance.toFixed(2)}, Final Score: ${score}`);
 
-  // Update score display
   select('#score').html(`Score: ${score}`);
 
-  // Draw final shape in red
   stroke(255, 0, 0);
   strokeWeight(2);
   noFill();
@@ -206,18 +197,17 @@ function calculateScore() {
   }
   endShape(CLOSE);
 
-  // Optional: Draw the best-fit circle for visualization
   stroke(0, 255, 0);
   strokeWeight(1);
   ellipse(centerX, centerY, avgRadius * 2, avgRadius * 2);
 }
 
 function clearCanvas() {
-  background(150);
+  background(255); // Consistent white background
   score = 0;
   select('#score').html('Score: 0');
   points = [];
-  select('#feedback').html('');
+  select('#feedback').html(''); // Clears the funny text
 }
 
 window.onload = function() {
@@ -225,3 +215,18 @@ window.onload = function() {
     console.error('p5.js library failed to load. Check network or CDN URL.');
   }
 };
+
+// Add a function to handle window resizing to keep the canvas responsive
+function windowResized() {
+  let canvasWidth = min(windowWidth * 0.9, 600);
+  let canvasHeight = min(windowHeight * 0.6, 400);
+  resizeCanvas(canvasWidth, canvasHeight);
+
+  // Recalculate the preview circle properties
+  perfectCircleX = width / 2;
+  perfectCircleY = height / 2;
+  perfectCircleRadius = min(width, height) * 0.8;
+
+  // Clear the canvas and reset the game state
+  clearCanvas();
+}
