@@ -10,7 +10,25 @@ let funnyTexts = [
   "Told you it was impossible for you. 😉",
   "Maybe try a square next time? 😜",
   "Your circle looks a bit... sleepy. 😴",
-  "Did a cat walk across your mousepad? 🐾"
+  "Did a cat walk across your mousepad?",
+  "Wow… that’s less circle and more confused potato 🥔😵",
+"Looks like your circle was drawn during an earthquake 🌍💥",
+"Pac-Man saw this and rage quit the arcade 😡🎮",
+"Congrats, you invented the oval 🚨📐",
+"Geometry teachers everywhere just fainted 📏💀",
+"Ah yes… the ‘abstract circle’ from the school of chaos 🎨🌀",
+"Your symmetry just packed its bags and left 🧳⚰️",
+"NASA said this orbit is too unstable for space 🛰️🚫",
+"Even your circle wants to escape the screen 🖥️🏃‍♂️",
+"Sad onion ring vibes 🧅😭",
+"This is the circle equivalent of a midlife crisis 🫠📉",
+"Looks like a donut that lost the will to live 🍩💔",
+"Perfect… if you were aiming for ‘abstract suffering’ 🎨🤡",
+"That shape belongs in the ‘What went wrong’ museum 🏛️❌",
+"Your circle’s crying in the corner 😭🔵",
+"Even the cat walking on the keyboard could do better 🐈⌨️",
+"If Picasso drew circles… they’d still be rounder 🎨😏",
+"Circle? No… this is the Bermuda Shape Mystery 🗺️🫣",
 ];
 
 

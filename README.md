@@ -9,7 +9,7 @@
 
 
 ### Team Members
-- Team Lead: Abhimanyu - CUCEK
+- Team Lead: Abhimanyu S - CUCEK
 - Member 2: Nandhu Krishna - CUCEK
 
 ### Project Description
