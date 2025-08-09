@@ -1,7 +1,7 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# The Polygon Formerly Known as Circle 🎯
+# Circle of lies 🎯
 
 
 ## Basic Details
@@ -28,7 +28,7 @@ For Software:
 - Libraries Used: p5.js
 - Tools Used: IntelliJ IDEA, Git, Netlify, GitHub, VS Code, Grok, Gemini, Chat GPT
 
-# Visit website at 
+# Visit website at https://circleoflies.netlify.app/
 <link src="https://circleoflies.netlify.app/">
 
 # Screenshots (Add at least 3)
