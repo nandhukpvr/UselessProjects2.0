@@ -1,4 +1,4 @@
-<img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/467f2fe5-6f42-4411-b448-370bc01bd244" /><img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
 # The Polygon Formerly Known as Circle 🎯
@@ -26,64 +26,32 @@ We've reverse-engineered the secrets of the perfect circle from ancient geometry
 For Software:
 - Languages Used: HTML, CSS, JavaScript
 - Libraries Used: p5.js
-- Tools Used:IntelliJ Idea,Git,GitHub,VS Code,Grok,Gemini,Chat GPT
+- Tools Used: IntelliJ IDEA, Git, Netlify, GitHub, VS Code, Grok, Gemini, Chat GPT
 
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
-
-### Project Documentation
-For Software:
+# Visit website at 
+<link src="https://circleoflies.netlify.app/">
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+<img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot1.png?raw=true">
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+<img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot2.png?raw=true">
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+<img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot3.png?raw=true">
 *Add caption explaining what this shows*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
 [Add your demo video link here]
 *Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Abhimanyu
+- Nandhu Krishna
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
