@@ -30,7 +30,8 @@ For Software:
 - Libraries Used: p5.js
 - Tools Used: IntelliJ IDEA, Git, Netlify, GitHub, VS Code, Grok, Gemini, Chat GPT
 
-# Visit website at https://circleoflies.netlify.app/
+# Visit website at 
+[https://circleoflies.netlify.app/]
 
 
 # Screenshots (Add at least 3)
@@ -46,8 +47,8 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[[Add your demo video link here](https://drive.google.com/file/d/1rYLnibUEFnhbHQYtLlvUJKJsg6RMyc-s/view?usp=sharing)]
+*This video shows how our funny little circle works*
 
 
 
