@@ -1,3 +1,5 @@
+# Useless-projects-2.0-Tinkerhub-Aug-2025
+Our code repo for the "Useless Project 2.0" by tinkerhub on Aug. (CUCEK)
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
@@ -29,7 +31,7 @@ For Software:
 - Tools Used: IntelliJ IDEA, Git, Netlify, GitHub, VS Code, Grok, Gemini, Chat GPT
 
 # Visit website at https://circleoflies.netlify.app/
-<link src="https://circleoflies.netlify.app/">
+
 
 # Screenshots (Add at least 3)
 <img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot1.png?raw=true">
