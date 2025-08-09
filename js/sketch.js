@@ -58,9 +58,9 @@ function displayRandomText() {
 }
 
 function draw() {
-  background(255); // Clear the canvas with a white background
+  clear(); // Clear the canvas with a white background
   noStroke();
-  fill(0, 0, 255, 50); // Semi-transparent blue fill
+  fill(0, 100, 255, 80); // A slightly more opaque and brighter blue
   ellipse(perfectCircleX, perfectCircleY, perfectCircleRadius, perfectCircleRadius);
 
   // This part of the code is the drawing logic
@@ -80,7 +80,7 @@ function draw() {
     points.push(createVector(x, y));
 
     // Redraw the entire path from the points array
-    stroke(0);
+    stroke(255);
     strokeWeight(2);
     noFill();
     beginShape();
@@ -127,7 +127,7 @@ function mouseReleased() {
 }
 
 function calculateScore() {
-  // Use a least-squares fit to find the best-fit circle.
+  // --- All the existing calculation logic stays the same ---
   let sumX = 0, sumY = 0, sumX2 = 0, sumY2 = 0, sumXY = 0, sumX3 = 0, sumY3 = 0, sumXy2 = 0, sumYx2 = 0;
   let N = points.length;
 
@@ -173,7 +173,6 @@ function calculateScore() {
   }
   let avgDeviation = totalDeviation / N;
 
-  // --- Scoring Logic ---
   let score = 100 - avgDeviation * 4;
 
   let startPoint = points[0];
@@ -205,6 +204,15 @@ function calculateScore() {
   console.log(`Avg Deviation: ${avgDeviation.toFixed(2)}, Closure Distance: ${closureDistance.toFixed(2)}, Final Score: ${score}`);
 
   select('#score').html(`Score: ${score}`);
+
+  // The condition is now changed to check for exactly 100
+  if (score === 100) {
+    // If the score is exactly 100, show the special message
+    select('#feedback').html("Wait... you actually did it?! IMPOSSIBLE! 🤯 Congrats!");
+  } else {
+    // Otherwise, show one of the random funny texts
+    displayRandomText();
+  }
 
   stroke(255, 0, 0);
   strokeWeight(2);
