@@ -69,10 +69,10 @@
     if (isDrawing) {
       let x = mouseX;
       let y = mouseY;
-      // Apply light wobble only near the end (last 20% of points, assuming 100 points as a typical circle)
+      // Apply slightly harder deflection near the end (last 20% of points, assuming ~100 points for a circle)
       if (points.length > 80) {
-        x += random(-10, 10);
-        y += random(-10, 10);
+        x += 12; // Fixed +12 pixel deflection in x
+        y += 12; // Fixed +12 pixel deflection in y
       }
       points.push(createVector(x, y));
 
@@ -101,7 +101,7 @@
   function mouseReleased() {
     if (isDrawing) {
       isDrawing = false;
-      if (points.length > 20) { // Increased minimum points for a valid shape
+      if (points.length > 20) { // Minimum points for a valid shape
         calculateScore();
       } else {
         select('#score').html('Score: 0 (Draw a larger shape!)');
@@ -126,8 +126,8 @@
     // Calculate variance to measure circularity
     let variance = distances.reduce((sum, d) => sum + Math.pow(d - avgRadius, 2), 0) / distances.length;
 
-    // Adjusted scoring to be more forgiving and ensure visibility
-    score = Math.max(0, 100 - Math.sqrt(variance) * 3); // Reduced multiplier for better scores
+    // Adjusted scoring for better feedback
+    score = Math.max(0, 100 - Math.sqrt(variance) * 3);
     score = Math.floor(score);
 
     // Debug logging
