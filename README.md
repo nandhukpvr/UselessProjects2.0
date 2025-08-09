@@ -1,4 +1,4 @@
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/467f2fe5-6f42-4411-b448-370bc01bd244" /><img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
+<img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
 # The Polygon Formerly Known as Circle 🎯
@@ -33,13 +33,13 @@ For Software:
 
 # Screenshots (Add at least 3)
 <img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot1.png?raw=true">
-*Add caption explaining what this shows*
-
-<img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot2.png?raw=true">
-*Add caption explaining what this shows*
+*Initial screen*
 
 <img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot3.png?raw=true">
-*Add caption explaining what this shows*
+*After drawing*
+
+<img src="https://github.com/nandhukpvr/UselessProjects2.0/blob/main/img/screenshot2.png?raw=true">
+*After drawing*
 
 
 ### Project Demo
