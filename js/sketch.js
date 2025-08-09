@@ -13,6 +13,7 @@ let funnyTexts = [
   "Did a cat walk across your mousepad? 🐾"
 ];
 
+
 function setup() {
   // Use a responsive canvas size.
   // The min() function ensures it doesn't get too wide on large screens.
